@@ -15,31 +15,35 @@ public class Shuffler {
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles:");
-		int[] values1 = {0, 1, 2, 3};
-		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
-			System.out.print("  " + j + ":");
-			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
-			}
-			System.out.println();
-		}
-		System.out.println();
+		// System.out.println("Results of " + SHUFFLE_COUNT +
+		// 						 " consecutive perfect shuffles:");
+		// int[] values1 = {0, 1, 2, 3};
+		// for (int j = 1; j <= SHUFFLE_COUNT; j++) {
+		// 	perfectShuffle(values1);
+		// 	System.out.print("  " + j + ":");
+		// 	for (int k = 0; k < values1.length; k++) {
+		// 		System.out.print(" " + values1[k]);
+		// 	}
+		// 	System.out.println();
+		// }
+		// System.out.println();
 
-		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive efficient selection shuffles:");
-		int[] values2 = {0, 1, 2, 3};
-		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
-			System.out.print("  " + j + ":");
-			for (int k = 0; k < values2.length; k++) {
-				System.out.print(" " + values2[k]);
-			}
-			System.out.println();
-		}
-		System.out.println();
+		// System.out.println("Results of " + SHUFFLE_COUNT +
+		// 						 " consecutive efficient selection shuffles:");
+		// int[] values2 = {0, 1, 2, 3};
+		// for (int j = 1; j <= SHUFFLE_COUNT; j++) {
+		// 	selectionShuffle(values2);
+		// 	System.out.print("  " + j + ":");
+		// 	for (int k = 0; k < values2.length; k++) {
+		// 		System.out.print(" " + values2[k]);
+		// 	}
+		// 	System.out.println();
+		// }
+		// System.out.println();
+
+		int[] arr1 = {1, 3, 5, 9};
+		int[] arr2 = {5, 3, 9, 1};
+		System.out.println(arePermutations(arr1, arr2));
 	}
 
 
@@ -98,10 +102,11 @@ public class Shuffler {
 		boolean there = false;
 		for (int val1 : arr1) {
 			for (int i = 0; i < arr2.length; i++) {
-				if (val1 == arr[i]) there = true;
+				if (val1 == arr2[i]) there = true;
 				if (there == false && i == arr2.length - 1) return false;
 				if (i == arr2.length - 1) there = false;
 			}
 		}
+		return true;
 	}
 }
